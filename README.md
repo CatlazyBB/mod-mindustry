@@ -1,3 +1,5 @@
+#Im not the one who make this mod the creator is electric gun
+
 # Version 1.7
 The PC version now uses the same UI input as mobile.<br>
 This is to avoid confusion and other problems, such as hotkeys activating while typing.<br>
