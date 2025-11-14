@@ -1,4 +1,4 @@
-#Im not the one who make this mod the creator is electric gun
+# Im not the one who make this mod the creator is electric gun
 
 # Version 1.7
 The PC version now uses the same UI input as mobile.<br>
