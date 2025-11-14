@@ -35,7 +35,7 @@ A mod that adds extremely broken power ups that are activated by entering specif
 |                  | i add this (im not the one who make it i just modify it) the creator is electric gun                      |                                                 |
 | bom              | Spawn 10 crawler                                                                                          | "bom"                                           |
 | icikiwir         | Spawn 1 corvus + 1 oct                                                                                    | "icikiwir"                                      |
-| wokwok           | spawn 1 veela + 4 mega                                                                                    | "wokwok"                                        |
+| wokwok           | spawn 1 vela + 4 mega                                                                                     | "wokwok"                                        |
 | oktin            | Fills core with titanium                                                                                  | "oktin"                                         |
 | okgas            | Fills core with metagla                                                                                   | "okgas"                                         |
 | oktor            | Fills core with thorium                                                                                   | "oktor"                                         |
