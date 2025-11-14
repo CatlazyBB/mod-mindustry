@@ -141,7 +141,7 @@ const cheatList = [
     newCheat("rumbling", "therumblingishere", 1, () => {
         let playerUnit = Vars.player.unit()
 
-        let count = 1
+        let count = 6
         for (let i = 0; i < count; i++) {
             let position = new Vec2(playerUnit.x, playerUnit.y)
             let positionOffset = new Vec2(Mathf.random(-50, 50), Mathf.random(-50, 50))
@@ -152,30 +152,6 @@ const cheatList = [
         }
         
         Vars.ui.showInfoPopup("Mini Rumbling!", 3, 1, 1, 1, 1, 1)
-    }),
-
-    //    Spawn 1 Vela + 4 Mega with permanent overclock, guardian, overdrive
-    ewCheat("wokwok", "wokwok", 1, () => {
-    let playerUnit = Vars.player.unit()
-
-    // Spawn 1 Vela
-    let velaPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
-    let vela = UnitTypes.vela.spawn(velaPos, playerUnit.team)
-    vela.apply(StatusEffects.overclock, 1000000 * 60)  // Selamanya ~27 tahun
-    vela.apply(StatusEffects.boss, 1000000 * 60)       // Guardian selamanya
-    vela.apply(StatusEffects.overdrive, 1000000 * 60)  // Overdrive selamanya
-
-    // Spawn 4 Mega
-    let count = 4
-    for (let i = 0; i < count; i++) {
-        let megaPos = new Vec2(playerUnit.x + Mathf.random(-80, 80), playerUnit.y + Mathf.random(-80, 80))
-        let mega = UnitTypes.mega.spawn(megaPos, playerUnit.team)
-        mega.apply(StatusEffects.overclock, 1000000 * 60)
-        mega.apply(StatusEffects.boss, 1000000 * 60)
-        mega.apply(StatusEffects.overdrive, 1000000 * 60)
-    }
-    
-    Vars.ui.showInfoPopup("1 Vela + 4 Mega OP spawned!", 3, 1, 1, 1, 1, 1)
     }),
 
 
@@ -322,94 +298,6 @@ const cheatList = [
         Vars.content.items().each(item => {core.items.set(item, core.storageCapacity)})
     }),
 
-    // Tambahin 5 cheat baru ini di AKHIR list newCheat (sebelum ] atau }); )
-
-    // okcop: Copper + Lead full capacity
-    newCheat("OKCOP", "okcop", 1, () => {
-    let core = Vars.player.core()
-    if(core != null){
-        let copper = Vars.content.items().find(item => item.name == "copper")
-        let lead = Vars.content.items().find(item => item.name == "lead")
-        if(copper != null) core.items.set(copper, core.storageCapacity)
-        if(lead != null) core.items.set(lead, core.storageCapacity)
-        Vars.ui.showInfoPopup("Copper & Lead FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
-    }
-    }),
-
-    // oksil: Silicon full capacity
-    newCheat("OKSIL", "oksil", 1, () => {
-    let core = Vars.player.core()
-    if(core != null){
-        let silicon = Vars.content.items().find(item => item.name == "silicon")
-        if(silicon != null) core.items.set(silicon, core.storageCapacity)
-        Vars.ui.showInfoPopup("Silicon FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
-    }
-    }),
-
-    // okgas: Metaglass full capacity
-    newCheat("OKGAS", "okgas", 1, () => {
-    let core = Vars.player.core()
-    if(core != null){
-        let metaglass = Vars.content.items().find(item => item.name == "metaglass")
-        if(metaglass != null) core.items.set(metaglass, core.storageCapacity)
-        Vars.ui.showInfoPopup("Metaglass FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
-    }
-    }),
-
-    // okt or: Thorium full capacity
-    newCheat("OKTOR", "oktor", 1, () => {
-    let core = Vars.player.core()
-    if(core != null){
-        let thorium = Vars.content.items().find(item => item.name == "thorium")
-        if(thorium != null) core.items.set(thorium, core.storageCapacity)
-        Vars.ui.showInfoPopup("Thorium FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
-    }
-    }),
-
-    // oktin: Titanium full capacity
-    newCheat("OKTIN", "oktin", 1, () => {
-    let core = Vars.player.core()
-    if(core != null){
-        let titanium = Vars.content.items().find(item => item.name == "titanium")
-        if(titanium != null) core.items.set(titanium, core.storageCapacity)
-        Vars.ui.showInfoPopup("Titanium FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
-    }
-    }),
-
-    // icikiwir: Spawn 1 Corvus + 1 Oct with permanent overclock, guardian, overdrive
-    newCheat("ICIKIWIR", "icikiwir", 1, () => {
-    let playerUnit = Vars.player.unit()
-
-    // Spawn 1 Corvus (air bomber OP)
-    let corvusPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
-    let corvus = UnitTypes.corvus.spawn(corvusPos, playerUnit.team)
-    corvus.apply(StatusEffects.overclock, 1000000 * 60)  // Selamanya
-    corvus.apply(StatusEffects.boss, 1000000 * 60)       // Guardian selamanya
-    corvus.apply(StatusEffects.overdrive, 1000000 * 60)  // Overdrive selamanya
-
-    // Spawn 1 Oct (air missile carrier)
-    let octPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
-    let oct = UnitTypes.oct.spawn(octPos, playerUnit.team)
-    oct.apply(StatusEffects.overclock, 1000000 * 60)
-    oct.apply(StatusEffects.boss, 1000000 * 60)
-    oct.apply(StatusEffects.overdrive, 1000000 * 60)
-    
-    Vars.ui.showInfoPopup("1 Corvus + 1 Oct OP spawned!", 3, 1, 1, 1, 1, 1)
-    }),
-
-    // bom: Spawn 10 Crawler
-    newCheat("BOM", "bom", 1, () => {
-    let playerUnit = Vars.player.unit()
-    let count = 10
-    
-    for (let i = 0; i < count; i++) {
-        let pos = new Vec2(playerUnit.x + Mathf.random(-100, 100), playerUnit.y + Mathf.random(-100, 100))
-        let crawler = UnitTypes.crawler.spawn(pos, playerUnit.team)
-    }
-    
-    Vars.ui.showInfoPopup("10 Crawler spawned!", 3, 1, 1, 1, 1, 1)
-    }),
-
     newCheat("third impact", "tumblingdown", 1, () => {
         let playerUnit = Vars.player.unit()
         let unitGroup = Groups.unit
@@ -486,6 +374,105 @@ const cheatList = [
 
             Call.createBullet(atomicBullet, Team.derelict, playerPosition.x + position.x, playerPosition.y + position.y, Math.random() * 360, 0, Math.random() + 1, Math.random() + 1)
         }
+    }),
+
+
+        // OKCOP: Copper + Lead
+    newCheat("OKCOP", "okcop", 1, () => {
+        let core = Vars.player.core()
+        if(core != null){
+            let copper = Vars.content.items().find(item => item.name == "copper")
+            let lead = Vars.content.items().find(item => item.name == "lead")
+            if(copper != null) core.items.set(copper, core.storageCapacity)
+            if(lead != null) core.items.set(lead, core.storageCapacity)
+            Vars.ui.showInfoPopup("Copper & Lead FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
+        }
+    }),
+
+    // OKSIL: Silicon
+    newCheat("OKSIL", "oksil", 1, () => {
+        let core = Vars.player.core()
+        if(core != null){
+            let silicon = Vars.content.items().find(item => item.name == "silicon")
+            if(silicon != null) core.items.set(silicon, core.storageCapacity)
+            Vars.ui.showInfoPopup("Silicon FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
+        }
+    }),
+
+    // OKGAS: Metaglass
+    newCheat("OKGAS", "okgas", 1, () => {
+        let core = Vars.player.core()
+        if(core != null){
+            let metaglass = Vars.content.items().find(item => item.name == "metaglass")
+            if(metaglass != null) core.items.set(metaglass, core.storageCapacity)
+            Vars.ui.showInfoPopup("Metaglass FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
+        }
+    }),
+
+    // OKTOR: Thorium
+    newCheat("OKTOR", "oktor", 1, () => {
+        let core = Vars.player.core()
+        if(core != null){
+            let thorium = Vars.content.items().find(item => item.name == "thorium")
+            if(thorium != null) core.items.set(thorium, core.storageCapacity)
+            Vars.ui.showInfoPopup("Thorium FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
+        }
+    }),
+
+    // OKTIN: Titanium
+    newCheat("OKTIN", "oktin", 1, () => {
+        let core = Vars.player.core()
+        if(core != null){
+            let titanium = Vars.content.items().find(item => item.name == "titanium")
+            if(titanium != null) core.items.set(titanium, core.storageCapacity)
+            Vars.ui.showInfoPopup("Titanium FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
+        }
+    }),
+
+    // WOKWOK: 1 Vela + 4 Mega OP (FIXED!)
+    newCheat("WOKWOK", "wokwok", 1, () => {
+        let playerUnit = Vars.player.unit()
+        // 1 Vela
+        let velaPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
+        let vela = UnitTypes.vela.spawn(velaPos, playerUnit.team)
+        vela.apply(StatusEffects.overclock, 1000000 * 60)
+        vela.apply(StatusEffects.guardian, 1000000 * 60)  // FIXED: guardian
+        vela.apply(StatusEffects.overdrive, 1000000 * 60)
+        // 4 Mega
+        for(let i = 0; i < 4; i++){
+            let megaPos = new Vec2(playerUnit.x + Mathf.random(-80, 80), playerUnit.y + Mathf.random(-80, 80))
+            let mega = UnitTypes.mega.spawn(megaPos, playerUnit.team)
+            mega.apply(StatusEffects.overclock, 1000000 * 60)
+            mega.apply(StatusEffects.guardian, 1000000 * 60)
+            mega.apply(StatusEffects.overdrive, 1000000 * 60)
+        }
+        Vars.ui.showInfoPopup("1 Vela + 4 Mega OP!", 3, 1, 1, 1, 1, 1)
+    }),
+
+    // ICIKIWIR: 1 Corvus + 1 Oct OP
+    newCheat("ICIKIWIR", "icikiwir", 1, () => {
+        let playerUnit = Vars.player.unit()
+        let corvusPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
+        let corvus = UnitTypes.corvus.spawn(corvusPos, playerUnit.team)
+        corvus.apply(StatusEffects.overclock, 1000000 * 60)
+        corvus.apply(StatusEffects.guardian, 1000000 * 60)
+        corvus.apply(StatusEffects.overdrive, 1000000 * 60)
+        let octPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
+        let oct = UnitTypes.oct.spawn(octPos, playerUnit.team)
+        oct.apply(StatusEffects.overclock, 1000000 * 60)
+        oct.apply(StatusEffects.guardian, 1000000 * 60)
+        oct.apply(StatusEffects.overdrive, 1000000 * 60)
+        Vars.ui.showInfoPopup("1 Corvus + 1 Oct OP!", 3, 1, 1, 1, 1, 1)
+    }),
+
+    // BOM: 10 Crawler
+    newCheat("BOM", "bom", 1, () => {
+        let playerUnit = Vars.player.unit()
+        for(let i = 0; i < 10; i++){
+            let pos = new Vec2(playerUnit.x + Mathf.random(-100, 100), playerUnit.y + Mathf.random(-100, 100))
+            UnitTypes.crawler.spawn(pos, playerUnit.team)
+        }
+        Vars.ui.showInfoPopup("10 Crawler spawned!", 3, 1, 1, 1, 1, 1)
     }),
 
     
