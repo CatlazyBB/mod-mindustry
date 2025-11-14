@@ -409,6 +409,16 @@ const cheatList = [
         }
     }),
 
+    // OG graphite
+    newCheat("OG", "og", 1, () => {
+        let core = Vars.player.core()
+        if(core != null){
+            let graphite = Vars.content.items().find(item => item.name == "graphite")
+            if(graphite != null) core.items.set(graphite, core.storageCapacity)
+            Vars.ui.showInfoPopup("graphite FULL (" + core.storageCapacity + ")!", 3, 1, 1, 1, 1, 1)
+        }
+    }),
+
     // OKTOR: Thorium
     newCheat("OKTOR", "oktor", 1, () => {
         let core = Vars.player.core()
@@ -440,29 +450,30 @@ const cheatList = [
         vela.apply(StatusEffects.overdrive, 1000000 * 60)
         // 4 Mega
         for(let i = 0; i < 4; i++){
-            let megaPos = new Vec2(playerUnit.x + Mathf.random(-80, 80), playerUnit.y + Mathf.random(-80, 80))
-            let mega = UnitTypes.mega.spawn(megaPos, playerUnit.team)
-            mega.apply(StatusEffects.overclock, 1000000 * 60)
-            mega.apply(StatusEffects.guardian, 1000000 * 60)
-            mega.apply(StatusEffects.overdrive, 1000000 * 60)
+            let quasarPos = new Vec2(playerUnit.x + Mathf.random(-80, 80), playerUnit.y + Mathf.random(-80, 80))
+            let quasar = UnitTypes.quasar.spawn(quasarPos, playerUnit.team)
+            quasar.apply(StatusEffects.overclock, 1000000 * 60)
+            quasar.apply(StatusEffects.guardian, 1000000 * 60)
+            quasar.apply(StatusEffects.overdrive, 1000000 * 60)
         }
-        Vars.ui.showInfoPopup("1 Vela + 4 Mega OP!", 3, 1, 1, 1, 1, 1)
+        Vars.ui.showInfoPopup("1 Vela + 4 qusar JIR!", 3, 1, 1, 1, 1, 1)
     }),
 
-    // ICIKIWIR: 1 Corvus + 1 Oct OP
-    newCheat("ICIKIWIR", "icikiwir", 1, () => {
+    //    ICIKIWIR: 1 Corvus
+    newCheat("iICIKIWIR", "icikiwir", 1, () => {
         let playerUnit = Vars.player.unit()
-        let corvusPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
-        let corvus = UnitTypes.corvus.spawn(corvusPos, playerUnit.team)
-        corvus.apply(StatusEffects.overclock, 1000000 * 60)
-        corvus.apply(StatusEffects.guardian, 1000000 * 60)
-        corvus.apply(StatusEffects.overdrive, 1000000 * 60)
-        let octPos = new Vec2(playerUnit.x + Mathf.random(-60, 60), playerUnit.y + Mathf.random(-60, 60))
-        let oct = UnitTypes.oct.spawn(octPos, playerUnit.team)
-        oct.apply(StatusEffects.overclock, 1000000 * 60)
-        oct.apply(StatusEffects.guardian, 1000000 * 60)
-        oct.apply(StatusEffects.overdrive, 1000000 * 60)
-        Vars.ui.showInfoPopup("1 Corvus + 1 Oct OP!", 3, 1, 1, 1, 1, 1)
+
+        let count = 1
+        for (let i = 0; i < count; i++) {
+            let position = new Vec2(playerUnit.x, playerUnit.y)
+            let positionOffset = new Vec2(Mathf.random(-50, 50), Mathf.random(-50, 50))
+            let corvus = UnitTypes.corvus.spawn(position.add(positionOffset), playerUnit.team)
+            let velocityVec = new Vec2(positionOffset.x, positionOffset.y).nor().scl(10)
+            corvus.apply(StatusEffects.overlock, 100000 * 60)
+            corvus.vel.add(velocityVec)
+        }
+        
+        Vars.ui.showInfoPopup("Mini Corvus!", 3, 1, 1, 1, 1, 1)
     }),
 
     // BOM: 10 Crawler
