@@ -480,7 +480,7 @@ const cheatList = [
     newCheat("DETOK", "detok", 4, () => {
         let playerUnit = Vars.player.unit()
 
-        let count = 1
+        let count = 4
         for (let i = 0; i < count; i++) {
             let position = new Vec2(playerUnit.x, playerUnit.y)
             let positionOffset = new Vec2(Mathf.random(-50, 50), Mathf.random(-50, 50))
