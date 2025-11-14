@@ -29,8 +29,8 @@ A mod that adds extremely broken power ups that are activated by entering specif
 | Skip Survival    | Instantly captures a survival map                                                                         | "myhousenow"                                    |
 | Creative Power   | Infinite Build Speed (for the unit type you are currently in)                                             | "thisismyworld"                                 |
 | Atomic           | Kills every unit on the map (except the player) and devastates buildings (idea by BlueDragonInfinity)     | "i am ATOMIC"                                   |
-|                  | i add this (im not the one who make it i just modify it) the creator is not me                            |                                                 |
 | Amongus          | Plays the Among Us intro                                                                                  | "amongus"                                       |
+|                  | i add this (im not the one who make it i just modify it) the creator is not me                            |                                                 |
 | bom              | Spawn 10 crawler                                                                                          | "bom"                                           |
 | icikiwir         | Spawn 1 corvus + 1 oct                                                                                    | "icikiwir"                                      |
 | wokwok           | spawn 1 veela + 4 mega                                                                                    | "wokwok"                                        |
