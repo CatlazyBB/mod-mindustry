@@ -34,10 +34,11 @@ A mod that adds extremely broken power ups that are activated by entering specif
 | Amongus          | Plays the Among Us intro                                                                                  | "amongus"                                       |
 |                  | i add this (im not the one who make it i just modify it) the creator is electric gun                      |                                                 |
 | bom              | Spawn 10 crawler                                                                                          | "bom"                                           |
-| icikiwir         | Spawn 1 corvus + 1 oct                                                                                    | "icikiwir"                                      |
-| wokwok           | spawn 1 vela + 4 mega                                                                                     | "wokwok"                                        |
+| icikiwir         | Spawn 1 corvus                                                                                            | "icikiwir"                                      |
+| wokwok           | spawn 1 vela + 4 quasaar                                                                                  | "wokwok"                                        |
 | oktin            | Fills core with titanium                                                                                  | "oktin"                                         |
-| okgas            | Fills core with metagla                                                                                   | "okgas"                                         |
+| okgas            | Fills core with metaglass                                                                                 | "okgas"                                         |
+| og               | Fills core with graphite                                                                                  | "og"                                            |
 | oktor            | Fills core with thorium                                                                                   | "oktor"                                         |
 | oksil            | Fills core with silicone                                                                                  | "oksil"                                         |
 | okcop            | Fills core with copper and lead                                                                           | "okcop"                                         |
