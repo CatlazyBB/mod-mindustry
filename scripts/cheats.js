@@ -476,6 +476,23 @@ const cheatList = [
         Vars.ui.showInfoPopup("Mini Corvus!", 3, 1, 1, 1, 1, 1)
     }),
 
+    //    RISPEK: 1 Reign
+    newCheat("RISPEK", "rispek", 1, () => {
+        let playerUnit = Vars.player.unit()
+
+        let count = 1
+        for (let i = 0; i < count; i++) {
+            let position = new Vec2(playerUnit.x, playerUnit.y)
+            let positionOffset = new Vec2(Mathf.random(-50, 50), Mathf.random(-50, 50))
+            let reign = UnitTypes.reign.spawn(position.add(positionOffset), playerUnit.team)
+            let velocityVec = new Vec2(positionOffset.x, positionOffset.y).nor().scl(10)
+            reign.apply(StatusEffects.overlock, 100000 * 60)
+            reign.vel.add(velocityVec)
+        }
+        
+        Vars.ui.showInfoPopup("Mini Corvus!", 3, 1, 1, 1, 1, 1)
+    }),
+    
     //    DETOK: 4
     newCheat("DETOK", "detok", 4, () => {
         let playerUnit = Vars.player.unit()
