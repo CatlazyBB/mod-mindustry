@@ -493,6 +493,23 @@ const cheatList = [
         Vars.ui.showInfoPopup("Mini!", 3, 1, 1, 1, 1, 1)
     }),
 
+    //    WIWOK: 4
+    newCheat("WIWOK", "wiwok", 4, () => {
+        let playerUnit = Vars.player.unit()
+
+        let count = 4
+        for (let i = 0; i < count; i++) {
+            let position = new Vec2(playerUnit.x, playerUnit.y)
+            let positionOffset = new Vec2(Mathf.random(-50, 50), Mathf.random(-50, 50))
+            let quasar = UnitTypes.quasar.spawn(position.add(positionOffset), playerUnit.team)
+            let velocityVec = new Vec2(positionOffset.x, positionOffset.y).nor().scl(10)
+            quasar.apply(StatusEffects.overlock, 100000 * 60)
+            quasar.vel.add(velocityVec)
+        }
+        
+        Vars.ui.showInfoPopup("Minimum!", 3, 1, 1, 1, 1, 1)
+    }),
+
     // BOM: 10 Crawler
     newCheat("BOM", "bom", 1, () => {
         let playerUnit = Vars.player.unit()
